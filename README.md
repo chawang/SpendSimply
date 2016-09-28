@@ -4,8 +4,6 @@
 
 **SpendSimply** is now open source (Sept 27, 2016)!
 
-[Website](http://thischarleswang.wixsite.com/spendsimply)
-
 [Download for iOS](https://itunes.apple.com/us/app/id1119452282)
 
 ## Guided Walkthrough
@@ -16,9 +14,9 @@ GIF created with [Ezgif](http://ezgif.com/) and [Quicktime](http://www.quicktime
 
 ## Notable Features:
 
-[x] Local DB management.
+- Local DB management.
 
-[x] Advertising.
+- Advertising.
 
 ## License
 
