@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Build.Download.0.2.1\build\Xamarin.Build.Download.props" Condition="Exists('..\packages\Xamarin.Build.Download.0.2.1\build\Xamarin.Build.Download.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{88FBBB20-A1B4-46BD-89F0-BB434AAE7BE3}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SpendSimply</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>SpendSimply</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Distribution: Charles Wang (8NXR9U8FTS)</CodesignKey>
+    <MtouchProfiling>true</MtouchProfiling>
+    <CodesignProvision>2180d8bc-73a1-4829-a77b-636ab8d7d0ab</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchFloat32>true</MtouchFloat32>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <CodesignKey>iPhone Distribution: Charles Wang (8NXR9U8FTS)</CodesignKey>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <BuildIpa>true</BuildIpa>
+    <CodesignProvision>2180d8bc-73a1-4829-a77b-636ab8d7d0ab</CodesignProvision>
+    <MtouchUseLlvm>true</MtouchUseLlvm>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <CodesignKey>iPhone Distribution: Charles Wang (8NXR9U8FTS)</CodesignKey>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <CodesignProvision>1738d7fd-286b-4d0d-a9fd-0322b4703542</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignKey>iPhone Distribution: Charles Wang (8NXR9U8FTS)</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchProfiling>false</MtouchProfiling>
+    <BuildIpa>true</BuildIpa>
+    <CodesignProvision>1738d7fd-286b-4d0d-a9fd-0322b4703542</CodesignProvision>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="SQLite-net">
+      <HintPath>..\packages\sqlite-net-pcl.1.1.1\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLite-net.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.MobileAds">
+      <HintPath>..\packages\Xamarin.Google.iOS.MobileAds.7.7.1.0\lib\Xamarin.iOS10\Google.MobileAds.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\dollar 120.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\dollar 180.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\dollar 80.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\dollar 87.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\Dollar120.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\Dollar180.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\Dollar80.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\Dollar87.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\Icon 80.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\Icon 87.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\Icon 4.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\Icon 120.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\Icon 180.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\Icon 58.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\Icon 29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="MainView.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="MainViewHelper.cs" />
+    <Compile Include="Database\DBofItems.cs" />
+    <Compile Include="Database\ItemsToTrack.cs" />
+    <Compile Include="Database\FileAccessHelper.cs" />
+    <Compile Include="CollectionLayout\ItemCollectionViewCell.cs" />
+    <Compile Include="CollectionLayout\ItemCollectionSource.cs" />
+    <Compile Include="Alerts.cs" />
+    <Compile Include="Database\DBofTapEvents.cs" />
+    <Compile Include="Database\TapEventsTracker.cs" />
+    <Compile Include="CollectionLayout\ItemCollectionFlowLayout.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\SQLitePCL.raw.0.8.6\build\Xamarin.iOS10\SQLitePCL.raw.targets" Condition="Exists('..\packages\SQLitePCL.raw.0.8.6\build\Xamarin.iOS10\SQLitePCL.raw.targets')" />
+  <Import Project="..\packages\Xamarin.Build.Download.0.2.1\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.2.1\build\Xamarin.Build.Download.targets')" />
+  <Import Project="..\packages\Xamarin.Google.iOS.MobileAds.7.7.1.0\build\Xamarin.Google.iOS.MobileAds.targets" Condition="Exists('..\packages\Xamarin.Google.iOS.MobileAds.7.7.1.0\build\Xamarin.Google.iOS.MobileAds.targets')" />
+  <ItemGroup>
+    <Folder Include="Database\" />
+    <Folder Include="CollectionLayout\" />
+    <Folder Include="Resources\Assets.xcassets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Images\Cancel.png" />
+    <BundleResource Include="Images\Info.png" />
+    <BundleResource Include="Images\Plus.png" />
+    <BundleResource Include="Images\Restart.png" />
+    <BundleResource Include="Images\piggy.png" />
+    <BundleResource Include="Images\Logo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="googleiosmobileads">
+      <Version>7.7.1.0</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="iTunesArtwork%402x" />
+    <ITunesArtwork Include="iTunesArtwork" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\personalID.txt">
+      <Link>personalID.txt</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
